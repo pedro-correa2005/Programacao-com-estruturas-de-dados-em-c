@@ -1,42 +1,10 @@
 #include<stdio.h>
 #define TAM 200000
 
-void swap( int vet[], int i, int j ){
-   int aux = vet[i];
-   vet[i] = vet[j];
-   vet[j] = aux;
-}
-int partition( int vet[], int start, int end ){
-   int aux, i = start, j;
-
-   for (j = start; j < end; j++) {
-      /* Elemento atual menor ou igual ao pivô? */
-      if (vet[j] <= vet[end]) {
-         swap(vet, i++, j);
-      }
-   }
-   swap(vet, i, end);
-   return i;
-}
-void mostrar_vet( int vet[], int tamanho ){
-   int pos;
-   for( pos = 0; pos < tamanho; pos++ ){
-      printf("%d, ", vet[pos] );
-   }
-   printf("\n");
-}
-void quick_sort( int vet[], int start, int end ){
-   int pivot;
-
-   if( start >= end ){
-      return;
-   }
-
-   pivot = partition( vet, start, end );
-
-   quick_sort( vet, start, pivot-1 );
-   quick_sort( vet, pivot+1, end );
-}
+void swap( int vet[], int i, int j );
+int partition( int vet[], int start, int end );
+void mostrar_vet( int vet[], int tamanho );
+void quick_sort( int vet[], int start, int end );
 
 int main(void){
 	int vet[TAM];
@@ -130,4 +98,40 @@ int main(void){
 	fclose(f2_b);
 	fclose(arqSaida);
 	return 0;
+}
+void swap( int vet[], int i, int j ){
+   int aux = vet[i];
+   vet[i] = vet[j];
+   vet[j] = aux;
+}
+int partition( int vet[], int start, int end ){
+   int aux, i = start, j;
+
+   for (j = start; j < end; j++) {
+      /* Elemento atual menor ou igual ao pivô? */
+      if (vet[j] <= vet[end]) {
+         swap(vet, i++, j);
+      }
+   }
+   swap(vet, i, end);
+   return i;
+}
+void mostrar_vet( int vet[], int tamanho ){
+   int pos;
+   for( pos = 0; pos < tamanho; pos++ ){
+      printf("%d, ", vet[pos] );
+   }
+   printf("\n");
+}
+void quick_sort( int vet[], int start, int end ){
+   int pivot;
+
+   if( start >= end ){
+      return;
+   }
+
+   pivot = partition( vet, start, end );
+
+   quick_sort( vet, start, pivot-1 );
+   quick_sort( vet, pivot+1, end );
 }

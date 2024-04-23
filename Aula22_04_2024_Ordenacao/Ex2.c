@@ -1,6 +1,11 @@
 #include<stdio.h>
 #define TAM 200000
 
+/*
+ *	Obs: O arquivo de 10000000 de linhas deve ser reduzido para dois arquivos de 200000 cada
+ *	chamados de f1.txt e f2.txt
+ */
+
 void swap( int vet[], int i, int j );
 int partition( int vet[], int start, int end );
 void mostrar_vet( int vet[], int tamanho );

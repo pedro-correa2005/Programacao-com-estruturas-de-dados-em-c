@@ -16,7 +16,7 @@ void passeio_pre_ordem(No *raiz);
 void passeio_em_ordem(No *raiz);
 void passeio_pos_ordem(No *raiz);
 void limpar_arvore(No *raiz);
-int contar_nos(No *raiz, int n);
+int contagem(No *raiz);
 
 int main(void){
 	Arvore ar;
@@ -79,7 +79,8 @@ int main(void){
 	passeio_em_ordem(ar.raiz);
 	printf("Passeio em pos ordem: \n");
 	passeio_pos_ordem(ar.raiz);
-	printf("Quantidade de nos: %d\n",contar_nos(ar.raiz, 0));
+	
+	printf("Quantidade de nos: %d\n", contagem(ar.raiz));
 	
 	limpar_arvore(ar.raiz);
 	return 0;
@@ -121,11 +122,13 @@ void limpar_arvore(No *raiz){
 	free(raiz); 
 }
 
-int contar_nos(No *raiz, int n){
+int contagem(No *raiz){
+	int qtd = 0;
 	if(raiz == NULL){
-		return;
+		return 0;
 	}
-	n = contar_nos(raiz->esq, n);
-	n = contar_nos(raiz->dir, n);
-	return n + 1;
+	qtd += contagem(raiz->esq);
+	qtd++;
+	qtd += contagem(raiz->dir);
+	return qtd;
 }

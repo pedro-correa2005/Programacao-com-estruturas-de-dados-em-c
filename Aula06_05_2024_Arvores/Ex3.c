@@ -35,6 +35,9 @@ int main(void){
 	inserir(&ar, 7);
 	inserir(&ar, 6);
 	inserir(&ar, 8);
+	//inserir(&ar, 4);
+	inserir(&ar, 1);
+	inserir(&ar, 2);
 	
 	printf("Pre-ordem:\n");
 	passeio_pre_ordem(ar.raiz);

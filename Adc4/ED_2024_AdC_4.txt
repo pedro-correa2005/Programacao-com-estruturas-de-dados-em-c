@@ -1,0 +1,17 @@
+GECO_3 - AdC_4 - Estruturas de Dados
+Oclair Prado
+
+1. Estou planejando uma festa e preciso de um programa para registrar a presença de uma quantidade fixa de convidados sendo que cada convidado pode levar uma quantidade ilimitada de amigos. 
+Cada convidado e cada amigo receberá um código sequencial que não se repete. 
+Sugira uma ou mais estruturas de dados que permita registrar a presença de cada convidado e de cada amigo de convidado e que também permita saber os amigos de cada convidado.
+
+2. Comente sobre a lista simplesmente ligada e pilha e fila.
+
+3. Comente sobre o custo computacional do vetor ordenado e da árvore de busca binária.
+
+4. Estou programando um jogo que gera uma quantidade muito grande e variavel de dados de entrada. 
+Cada um deles deve produzir uma resposta praticamente imediata. 
+Estou pensando em usar uma tabela de Hash como estrutura de dados para a base deste programa. 
+Qual sua opinião? Explique suas conclusões.
+
+5. Comente sobre um algoritmo eficiente de ordenação em comparação com um ineficiente.
